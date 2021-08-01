@@ -1,0 +1,76 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    color: #333;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.wrapper {
+    width: 80%;
+    margin: auto;
+}
+
+header, footer {
+    background-color: rgb(35, 107, 241);
+}
+
+header{
+    padding-bottom: 1px;
+}
+
+header h1 a {
+    text-decoration: none;
+    color: gold;
+}
+
+.main-nav {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+}
+
+.main-nav a {
+    border-radius: 5px;
+    background: #60B99A;
+    color: #fff;
+    display: block;
+    padding: 7px;
+    text-decoration: none;
+}
+
+main {
+    background-color: gainsboro;
+    text-align: center;
+}
+
+.content {
+    margin-bottom: 30px;
+}
+
+h2 {
+    background-color: wheat;
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.author {
+    color: gold;
+}
+
+@media only screen and (max-width: 700px) {
+    .container {
+        width: 70vw;
+    }
+    body {
+        font-size: 1.3rem;
+    }
+}

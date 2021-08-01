@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>変なポケモンデータ検索</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="wrapper">
+            <h1><a href="">変なポケモンデータ検索</a></h1>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="#first-data">初代データ検索</a></li>
+                    <li><a href="#color-data">色検索</a></li>
+                    <li><a href="#3">準備中</a></li>
+                    <li><a href="#4">準備中</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="wrapper">
+        <main>
+            <div id="first-data" class="content">
+                <h2>初代ポケモン（赤、緑、青）データ検索</h2>
+                <p>ポケモンの名前を入れるとデータを表示します。</p>
+                <input id="ja-Name" type="text" placeholder="ピカチュウ">
+                <button onclick="display()">表示</button>
+
+                <table id="data-table1" class="table1">
+                    <tr>
+                        <th>番号</th>
+                        <th>名前</th>
+                        <th>英名</th>
+                        <th>属名</th>
+                        <th>画像</th>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="color-data" class="content">
+                <h2>ポケモン色検索</h2>
+                <p>好きな色の番号を入れると、その色のポケモンを表示します。</p>
+                <p id="count"></p>
+
+                <div class="flex">
+
+                    <table id="color-table1" border="5">
+                        <tr>
+                            <td>1</td>
+                            <td>黒</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>青</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>茶</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>灰色</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>みどり</td>
+                        </tr>
+                    </table>
+
+                    <table id="color-table2" border="5">
+                        <tr>
+                            <td>6</td>
+                            <td>ピンク</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>紫</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>赤</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>白</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>黄色</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <input id="color-No" type="number" max="10" min="1" placeholder="3">
+                <button onclick="getNum(), getNameData(), displayImage(), disabled=true; ">表示</button>
+                <button id="rest" onclick="location.reload()">リセット</button>
+                <div id="result"></div>
+            </div>
+
+            <div id="3" class="content">
+                <h2>○○検索</h2>
+                <p>準備中</p>
+
+                <input id="" type="">
+                <button onclick="">表示</button>
+            </div>
+
+            <div id="4" class="content">
+                <h2>○○検索</h2>
+                <p>準備中</p>
+
+                <input id="" type="">
+                <button onclick="">表示</button>
+            </div>
+
+
+        </main>
+    </div>
+
+    <footer>
+        <div class="wrapper">
+            <span class="author">&copy;MacLove</span>
+        </div>
+    </footer>
+
+
+    <script src="script/first-data.js"></script>
+    <script src="script/color.js"></script>
+</body>
+
+</html>
