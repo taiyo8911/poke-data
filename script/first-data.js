@@ -622,7 +622,11 @@ function clearText() {
     textForm.value = '';
 }
 
+
+
 async function display() {
+
+    // 入力値（日本名）を英語名に変換する
     let enName = change();
 
     // APIでjsonを取得する
@@ -672,6 +676,9 @@ async function display() {
 
     // 生成したtr要素を、data-table1に追加、表示する
     document.getElementById('data-table1').appendChild(tr);
+
+
+
 
     clearText();
 }

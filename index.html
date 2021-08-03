@@ -6,14 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>変なポケモンデータ検索</title>
+    <title>ポケモンデータ検索アプリ</title>
 </head>
 
 <body>
 
     <header>
         <div class="wrapper">
-            <h1><a href="">変なポケモンデータ検索</a></h1>
+            <h1><a href="">ポケモンデータ検索アプリ</a></h1>
             <nav>
                 <ul class="main-nav">
                     <li><a href="#first-data">初代データ検索</a></li>
@@ -34,7 +34,7 @@
                 <button onclick="display()">表示</button>
 
                 <table id="data-table1" class="table1">
-                    <tr>
+                    <tr id="thead">
                         <th>番号</th>
                         <th>名前</th>
                         <th>英名</th>
@@ -45,61 +45,27 @@
             </div>
 
             <div id="color-data" class="content">
-                <h2>ポケモン色検索</h2>
-                <p>好きな色の番号を入れると、その色のポケモンを表示します。</p>
+                <h2>ポケモン色別検索</h2>
+                <p>その色のポケモンを表示します。</p>
                 <p id="count"></p>
 
-                <div class="flex">
+                <p>
+                    <button class="button btn-black" value="1">黒</button>
+                    <button class="button btn-blue" value="2">青</button>
+                    <button class="button btn-brown" value="3">茶</button>
+                    <button class="button btn-gray" value="4">灰</button>
+                    <button class="button btn-green" value="5">緑</button>
+                </p>
 
-                    <table id="color-table1" border="5">
-                        <tr>
-                            <td>1</td>
-                            <td>黒</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>青</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>茶</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>灰色</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>みどり</td>
-                        </tr>
-                    </table>
+                <p>
+                    <button class="button btn-pink" value="6">桃</button>
+                    <button class="button btn-purple" value="7">紫</button>
+                    <button class="button btn-red" value="8">赤</button>
+                    <button class="button btn-white" value="9">白</button>
+                    <button class="button btn-yellow" value="10">黄</button>
+                </p>
 
-                    <table id="color-table2" border="5">
-                        <tr>
-                            <td>6</td>
-                            <td>ピンク</td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>紫</td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>赤</td>
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                            <td>白</td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>黄色</td>
-                        </tr>
-                    </table>
-                </div>
 
-                <input id="color-No" type="number" max="10" min="1" placeholder="3">
-                <button onclick="getNum(), getNameData(), displayImage(), disabled=true; ">表示</button>
                 <button id="rest" onclick="location.reload()">リセット</button>
                 <div id="result"></div>
             </div>

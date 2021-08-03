@@ -9,6 +9,14 @@ body {
     padding: 0;
 }
 
+input {
+    font-size: 16px;
+}
+
+button {
+    cursor: pointer;
+}
+
 .wrapper {
     width: 80%;
     margin: auto;
@@ -18,7 +26,7 @@ header, footer {
     background-color: rgb(35, 107, 241);
 }
 
-header{
+header {
     padding-bottom: 1px;
 }
 
@@ -56,21 +64,76 @@ h2 {
     background-color: wheat;
 }
 
-.flex{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
+.button {
+    border: 2px solid white;
+    border-radius: 3px;
+    box-shadow: 0 7px 10px -5px rgba(0, 0, 0, 0.5);
+    width: 80px;
+    height: 40px;
+}
+
+.btn-black {
+    background-color: black;
+    color: white;
+}
+
+.btn-blue {
+    background-color: #2196f3;
+    color: white;
+}
+
+.btn-brown {
+    background-color: brown;
+    color: white;
+}
+
+.btn-gray {
+    background-color: #9e9e9e;
+    color: white;
+}
+
+.btn-green {
+    background-color: #4caf50;
+    color: white;
+}
+
+.btn-pink {
+    background-color: pink;
+    color: black;
+}
+
+.btn-purple {
+    background-color: #9c27b0;
+    color: white;
+}
+
+.btn-red {
+    background-color: #f44336;
+    color: white;
+}
+
+.btn-white {
+    background-color: white;
+    color: black;
+}
+
+.btn-yellow {
+    background-color: #edd60e;
+    color: black;
 }
 
 .author {
     color: gold;
 }
 
-@media only screen and (max-width: 700px) {
+@media screen and (max-width: 700px) {
     .container {
         width: 70vw;
     }
     body {
-        font-size: 1.3rem;
+        font-size: 1rem;
+    }
+    .button {
+        width: 45px;
     }
 }

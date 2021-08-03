@@ -66,20 +66,21 @@
 // yellow = ['sandshrew', 'meowth', 'psyduck', 'kakuna', 'beedrill', 'pikachu', 'raichu', 'sandslash', 'ninetales', 'persian', 'ponyta', 'drowzee', 'zapdos', 'moltres', 'rapidash', 'hypno', 'exeggutor', 'electabuzz', 'jolteon', 'cyndaquil', 'pichu', 'sunkern', 'girafarig', 'dunsparce', 'shuckle', 'quilava', 'typhlosion', 'ampharos', 'sunflora', 'elekid', 'raikou', 'makuhita', 'beautifly', 'pelipper', 'ninjask', 'plusle', 'minun', 'numel', 'lunatone', 'manectric', 'jirachi', 'combee', 'chingling', 'mothim', 'vespiquen', 'uxie', 'cresselia', 'victini', 'electivire', 'sewaddle', 'scraggy', 'archen', 'joltik', 'leavanny', 'archeops', 'galvantula', 'mienfoo', 'keldeo', 'haxorus', 'helioptile', 'dedenne', 'cutiefly', 'heliolisk', 'ribombee', 'mimikyu', 'tapu-koko', 'zeraora', 'yamper', 'dottler', 'boltund', 'falinks', 'morpeko', 'cufant', 'regieleki', 'cofagrigus']
 
 
-// 入力フォームの値を取得する
-function getNum() {
-    let num = document.getElementById('color-No').value;
-    return num;
-}
 
 
-// 色別のポケモン名を取得し、配列に保存
-async function getNameData() {
-    colorUrl = `https://pokeapi.co/api/v2/pokemon-color/${getNum()}/`
+// 押されたボタンのvalueを取得する
+document.querySelectorAll('.button').forEach(function (button) {
+    button.addEventListener('click', { value: `${button.value}`, handleEvent: onClickButton });
+})
+
+async function onClickButton() {
+    // 押されたボタンに対応したデータを取得していく
+    colorUrl = `https://pokeapi.co/api/v2/pokemon-color/${this.value}/`
 
     res = await fetch(colorUrl);
     data = await res.json();
 
+    // 色別のポケモン名を取得し、配列に保存
     let data_length = data.pokemon_species.length;
     let names = [];
 
@@ -87,39 +88,12 @@ async function getNameData() {
         names.push(data['pokemon_species'][i]['name']);
     }
 
-    return names;
-}
-
-// 当該の色のポケモン画像を表示する
-// async function displayImage() {
-//     names = await getNameData();
-//     let names_length = names.length;
-
-//     // データ数を表示する
-//     document.getElementById('count').textContent = `${names_length}匹`;
-
-//     for (i = 0; i < names_length; i++) {
-//         let pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${names[i]}/`;
-
-//         res = await fetch(pokemonUrl);
-//         data = await res.json();
-
-
-//         let pokeImageUrl = data['sprites']['front_default']
-
-
-//         let img = document.createElement('img');
-//         img.src = pokeImageUrl;
-
-//         document.getElementById('result').appendChild(img);
-
-//     }
-// }
-
-async function displayImage() {
-    names = await getNameData();
     let names_length = names.length;
 
+    // データ数を表示する
+    document.getElementById('count').innerText = `${names_length}匹`;
+
+    // 画像を表示する
     let pokemonUrl = [];
     let imageUrl = [];
 
@@ -138,5 +112,60 @@ async function displayImage() {
         document.getElementById('result').appendChild(img);
 
     }
-
 }
+
+
+// 入力フォームの値を取得する
+// function getNum() {
+//     let num = document.getElementById('color-No').value;
+//     return num;
+// }
+
+
+
+// 色別のポケモン名を取得し、配列に保存
+// async function getNameData() {
+//     colorUrl = `https://pokeapi.co/api/v2/pokemon-color/${getNum()}/`
+
+//     res = await fetch(colorUrl);
+//     data = await res.json();
+
+//     let data_length = data.pokemon_species.length;
+//     let names = [];
+
+//     for (i = 0; i < data_length; i++) {
+//         names.push(data['pokemon_species'][i]['name']);
+//     }
+
+//     return names;
+// }
+
+
+// 画像を表示する
+// async function displayImage() {
+//     names = await getNameData();
+//     let names_length = names.length;
+
+//     // データ数を表示する
+//     document.getElementById('count').innerText = `${names_length}匹`;
+
+
+//     let pokemonUrl = [];
+//     let imageUrl = [];
+
+//     let img = [];
+
+//     for (i = 0; i < names_length; i++) {
+//         pokemonUrl.push(`https://pokeapi.co/api/v2/pokemon/${names[i]}/`);
+//     }
+
+//     for (i = 0; i < names_length; i++) {
+//         res = await fetch(pokemonUrl[i]);
+//         data = await res.json();
+//         imageUrl = data['sprites']['front_default'];
+//         img = document.createElement('img');
+//         img.src = imageUrl;
+//         document.getElementById('result').appendChild(img);
+
+//     }
+// }
